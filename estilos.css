@@ -1,36 +1,32 @@
 body{
     font-family: 'Fira Sans', sans-serif;
-    background: #36D1DC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
 
 }
 
-h1,h3{
+h1{
     text-align: center;
 }
-
-
 
 form{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 715px;
     margin: 0;
-    padding-left: 20em;
-      
-       
+    padding-left: 10em;
+    
 }
 
 
-input,textarea{
-    padding: 5px;
+.__container{
+    width: 100vw;
+    
 }
 
-
-img{
-    width: 40px;
-    height: 20px;
+input{
+    width: 20%;
+    margin: 0.5rem;
+    
 }
+
 
