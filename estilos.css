@@ -1,32 +1,47 @@
 body{
+    background-color: #2196f3;
+    min-height: 1000px;
     font-family: 'Fira Sans', sans-serif;
-   
-
-}
-
-h1{
+    background: url(assets/fondo.png), #2196f3;
+    background: url(assets/fondo.png),
+      -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
+    background: url(assets/fondo.png),
+      linear-gradient(to left, #2196f3, #009688);
+  }
+  
+  h1 {
+    color: #00204a;
+    padding: 10px;
     text-align: center;
-}
-
-form{
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #cabecera {
+    background-color: #3f51b5;
+    text-align: center;
+  }
+  
+  
+  
+  form {
+    text-align: center;
+    margin:0;
     display: flex;
+    flex-direction:column;
     justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding-left: 10em;
     
-}
+  }
 
-
-.__container{
-    width: 100vw;
+  button {
+    border-radius: 80px;
     
-}
 
-input{
-    width: 20%;
-    margin: 0.5rem;
-    
-}
-
-
+  }
+  
