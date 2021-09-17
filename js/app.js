@@ -12,6 +12,12 @@ let data = [
 let panel = document.querySelector("#panel");
 
 
+function guardarLocalStorage (data){
+  window.localStorage.setItem('data', JSON.stringify(data)
+  );
+}
+
+
 function clearForm() {
   document.querySelector("#name").value = "";
   document.querySelector("#lname").value = "";
