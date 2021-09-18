@@ -8,24 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;500&display=swap" rel="stylesheet">
-    <title>CRUD Javascript ConfiguroWeb</title>
+    <title>CRUD</title>
   </head>
 
   <body>
     <div class="container">
-      <h1>LISTA DE PERSONAS</div>
+      <h1>LISTA DE PERSONAS</h1>
+    </div>
 
   <form class="container" onsubmit="event.preventDefault()">
-    <input class="input-name" id="name" name="name" placeholder="Nombre"><br>
-    <input class="input-lname" id="lname" name="lname" placeholder="Apellido"><br>
-    <button class="clearForm" onclick="clearForm()">Limpiar Formulario</button>
+    <input class="name" id="name" name="name" placeholder="Nombre"><br>
+    <input class="lname" id="lname" name="lname" placeholder="Apellido"><br>
+    
     <br /><br />
 
     <button class="create" onclick="create()">Crear</button><br>
     <button class="update" onclick="update()">Actualizar</button><br>
     <button class="deleteItem" onclick="deleteItem()">Eliminar</button><br>
     <br /><br />
-    <select id="panel" size="10" onclick="panelClick()"> </select>
   </form>
 
     <script src="js/app.js">

@@ -9,21 +9,23 @@ let data = [
   { name: "Rafael", lastname: "Pérez" }
 ];
 
-let panel = document.querySelector("#panel");
 
+window.onload = () =>{
+  data.push(window.localStorage.getItem('data'))
+  console.log(data);
+  alert('Bienvenidos a mi primer CRUD.Gracias TOTALES!!!')
+}
 
+//Se guardan los datos en local storage
 function guardarLocalStorage (data){
   window.localStorage.setItem('data', JSON.stringify(data)
   );
 }
 
 
-function clearForm() {
-  document.querySelector("#name").value = "";
-  document.querySelector("#lname").value = "";
-}
 
-function renderItem() {
+
+/*function renderItem() {
 
   panel.textContent = "";
   data.forEach(x => {
@@ -31,32 +33,37 @@ function renderItem() {
     element.innerText = `${x.name} ${x.lastname}`;
     panel.append(element);
   });
-}
+}*/
 
-function create() {
+// Aqui se agregan nuevos datos
+function create(data) {
   let name = document.querySelector("#name").value;
   let lastname = document.querySelector("#lname").value;
   data = [...data, { firstname: name, lastname: lastname }];
-  clearForm();
-  console.log(data)
-  renderItem();
+  data.push(data);
+  guardarLocalStorage(data);
+  return data;
+  alert('Dato guardado con éxito');
+  console.log(data);
+  
 }
 
-function panelClick() {
-  i = panel.selectedIndex;
-  document.querySelector("#name").value = data[i].name;
-  document.querySelector("#lname").value = data[i].lastname;
-}
 
+//Aqui se actualizan nuevos datos
 function update() {
   data[i].name = document.querySelector("#name").value;
   data[i].lastname = document.querySelector("#lname").value;
   renderItem();
 }
 
-function deleteItem() {
-  data.splice(i, 1);
-  renderItem();
-}
 
- renderItem();
+//Aqui se borran los datos
+function deleteItem(NombresFiltrados) {
+  const name = data.filter((data) => {
+    return data.name != NombresFiltrados;
+  })
+}
+data = deleteItem;
+guardarLocalStorage(data);
+
+ 

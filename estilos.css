@@ -9,11 +9,17 @@ body{
       linear-gradient(to left, #2196f3, #009688);
   }
   
+
+
+
   h1 {
     color: #00204a;
     padding: 10px;
     text-align: center;
+   
   }
+
+ 
   
   .container {
     max-width: 400px;
