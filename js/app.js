@@ -1,10 +1,10 @@
 
- 
+ //toda tarea debe tener un id
  var invent = [
-   { name: 'calabaza'},
-   { name: 'durazno'},
-   {  name: 'zanahoria'},
-   {  name: 'piña'},
+   { id:1, name: 'calabaza'},
+   { id:2,name: 'durazno'},
+   { id:3, name: 'zanahoria'},
+   { id:4, name: 'piña'},
   ];
  
  
@@ -13,31 +13,45 @@ window.onload = () =>{
 }
  
 
+function saveLocalStorage(invent){
+  window.localStorage.setItem('invent', JSON.stringify(invent))
+}
+
 
 
  
  function createItem(item) {
-  invent.push(item);
+  const itemId = {id:Math.random() ,...item}
+  invent.push(itemId);
+  saveLocalStorage(invent);
   return invent;
    
 
  }
 
- function deleteItem(nameInvent) {
+ function deleteItem(name) {
+   //Filter es para filtrar los elementos que hagan match con mi condicional
    const itemFilter = invent.filter((item) => {
-   return item.name != nameInvent 
+   return item.name != name //-> Esta es mi condicional
    })
-   console.log(itemFilter);
+   invent = itemFilter;
+   saveLocalStorage(invent)
   }
   
  
  
 
  
- function updateItem(inventEdit) {
-   console.log('Agregando item')
+ function updateItem(itemEdit) {
+  const itemFilter = invent.filter((item) => {
+    return item.id != itemEdit.id//-> Esta es mi condicional
+    })
+    itemFilter.push(itemEdit);
+    saveLocalStorage(invent)
+    
+   }
    
- }
+
  
  
  
