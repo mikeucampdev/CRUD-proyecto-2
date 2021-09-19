@@ -1,44 +1,44 @@
 
  
- var list = [
-   { name: "Mauricio", lastname: "Sevilla" },
-   { name: "Jorge", lastname: "Barón" },
-   { name: "Andrés", lastname: "Espinoza" },
-   { name: "Rafael", lastname: "Pérez" }
- ];
+ var invent = [
+   { name: 'calabaza'},
+   { name: 'durazno'},
+   {  name: 'zanahoria'},
+   {  name: 'piña'},
+  ];
  
  
 window.onload = () =>{
-  console.log(list);
+  console.log(invent);
 }
  
 
+
+
  
- function create(data) {
-   var name = document.querySelector("#name").value;
-   var lastname = document.querySelector("#lname").value;
-   data.push(name, lastname);
-   return array;
+ function createItem(item) {
+  invent.push(item);
+  return invent;
    
 
  }
 
- function deleteItem(name) {
-  const listNames = name.filter((data) => {
-  return data.name !=  
-
-  console.log(listNames);
+ function deleteItem(nameInvent) {
+   const itemFilter = invent.filter((item) => {
+   return item.name != nameInvent 
+   })
+   console.log(itemFilter);
+  }
   
-})
+ 
  
 
  
- function update() {
-   list.name = document.querySelector("#name").value;
-   list.lastname = document.querySelector("#lname").value;
-   renderItem();
+ function updateItem(inventEdit) {
+   console.log('Agregando item')
+   
  }
  
  
  
- }
+ 
