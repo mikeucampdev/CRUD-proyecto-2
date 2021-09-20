@@ -45,16 +45,13 @@ body{
     
   }
 
-  button {
+  button, #newItem.create{
     border-radius: 80px;
-       
-    
-
+   
+         
   }
 
-  .button.deleteitem{
-    background-color: tomato;
-  }
+
 
   .copyright{
     margin: 0;
