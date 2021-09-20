@@ -1,76 +1,89 @@
 
 
-//TODO Selectores del DOM
-
-const inputName   = document.getElementById('name')
-const buttonCreate = document.getElementById('newItem')
-const buttonUpdate = document.getElementById('updateItem')
-const buttonDelete = document.getElementById('deleteItem')
 
 
 
 
+var el, i;
+var data = [ 
+{ firstname: "Mauricio", lastname: "Sevilla" },
+{ firstname: "Jorge", lastname: "Barón" },
+{ firstname: "Andrés", lastname: "Espinoza" },
+{ firstname: "Rafael", lastname: "Pérez" }];
+var panel = document.querySelector("#panel");
 
- //TODO toda tarea debe tener un id
- var invent = [];
- 
- 
+//Funcion para borrar los datos del formulario
+function clearForm() {
+  document.querySelector("#fname").value = "";
+  document.querySelector("#lname").value = "";
+}
+
+//Funcion para crear nuevos datos
+function create() {
+  var fn = document.querySelector("#fname").value;
+  var ln = document.querySelector("#lname").value;
+  data = [...data, { firstname: fn, lastname: ln }];
+  clearForm();
+  console.log(data)
+  renderItem();
+  saveLocalStorage(data)
+}
+
+//Funcion para actualizar datos existentes
+function update() {
+  data[i].firstname = document.querySelector("#fname").value;
+  data[i].lastname = document.querySelector("#lname").value;
+  renderItem();
+  saveLocalStorage(data)
+}
+
+//Funcion para borrar los datos
+function deleteItem() {
+  data.splice(i, 1);
+  renderItem();
+  saveLocalStorage(data)
+}
+
+ renderItem();
+
+ //Obtener los datos para localStorage
+
 window.onload = () => {
-  const inventFormat = JSON.parse(window.localStorage.getItem('invent'))
-  invent = inventFormat
-  alert('Bienvenidos a mi primer CRUD. Gracias TOTALES!!!')
-  console.log(invent);
-}
- 
-
-function saveLocalStorage(invent){
-  window.localStorage.setItem('invent', JSON.stringify(invent))
+  const dataFormat = JSON.parse(window.localStorage.getItem('data'))
+  invent = dataFormat
+  console.log(data);
 }
 
+//Funcion para guardar los datos en localStorage
+function saveLocalStorage(data){
+  window.localStorage.setItem('data', JSON.stringify(data))
+}
 
 
- // Funcion para crear
- function createItem(item) {
-  const itemId = {id:Math.random() ,...item}
-  invent.push(itemId)
-  saveLocalStorage(invent)
-  alert('Producto agregado')
-  return invent;
-   
+//Muestra los datos en el DOM
+function renderItem() {
 
- }
+  panel.textContent = "";
+  data.forEach(x => {
+    el = document.createElement("option");
+    el.innerText = `${x.firstname} ${x.lastname}`;
+    panel.append(el);
+    saveLocalStorage(data)
+  });
+}
 
- //Funcion para borrar
- function deleteItem(name) {
-   //TODO Filter es para filtrar los elementos que hagan match con mi condicional
-   const itemFilter = invent.filter((item) => {
-   return item.name != name //-> Esta es mi condicional
-   })
-   invent = itemFilter
-   saveLocalStorage(invent)
-  }
-  
- 
- 
 
- //Funcion para actualizar
- function updateItem(itemEdit) {
-  const itemFilter = invent.filter((item) => {
-    return item.id != itemEdit.id//-> Esta es mi condicional
-    })
-    itemFilter.push(itemEdit)
-    saveLocalStorage(invent)
 
-   }
+function panelClick() {
+  i = panel.selectedIndex;
+  document.querySelector("#fname").value = data[i].firstname;
+  document.querySelector("#lname").value = data[i].lastname;
+  saveLocalStorage(data)
+}
 
-   //TODO Metodo para que funcionen los botones
-  buttonCreate.addEventListener('click', () =>{
-  const valueInput = inputName .value
-  const name = {nombre: valueInput}
-  createItem(name)
-  inputName.value = ''
-   
-})
+
+
+
    
 
  

@@ -6,56 +6,63 @@ body{
     background: url(assets/fondo.png),
       -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
     background: url(assets/fondo.png),
-      linear-gradient(to left, #2196f3, #009688);
+      linear-gradient( #2196f3, #009688);
   }
   
 
 
+h1{
+  text-align: center;
+  color:#050A6E;
+}
 
-  h1 {
-    color: #00204a;
-    padding: 10px;
-    text-align: center;
-   
-  }
+.form-container{
+  margin:0;
+  padding: 0;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  
+}
 
+.button-blue1, .button-blue2{
+background-color: blue;
+color: white;
+border-radius: 40px;
+
+
+
+}
+
+.button-red{
+  background: red;
+  color: white;
+  border-radius: 40px;
+  
+}
+
+.button-yellow{
+  background: yellow;
+  color:black;
+  margin-top: 10px;
  
+ 
+  border-radius: 20px;
   
-  .container {
-    max-width: 400px;
-    margin: 50px auto;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-  }
-  
-  #cabecera {
-    background-color: #3f51b5;
-    text-align: center;
-  }
-  
-  
-  
-  form {
-    text-align: center;
-    margin:0;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    
-  }
+}
 
-  button, #newItem.create{
-    border-radius: 80px;
-   
-         
-  }
+.input-apellido, .input-name{
+  width: 100%;
+  padding: 8px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #050A6E;
+
+}
+
+.copyright{
+  text-align: center;
+}
 
 
 
-  .copyright{
-    margin: 0;
-    text-align: center;
-    color: #00204a;
-  }
-  

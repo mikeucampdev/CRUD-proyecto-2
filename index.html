@@ -14,23 +14,28 @@
 
 <body>
   <header>
-    <div class="container">
-      <h1>INVENTARIO FRUTERIA "MONTEMAYOR"</h1>
-    </div>
+<h1>LISTA DE ALUMNOS</h1>      
+  
+<form class="form-container" onsubmit="event.preventDefault()">
+  <input class="input-name" id="fname" name="fname" placeholder="Nombre"><br>
+  <input class="input-apellido" id="lname" name="lname" placeholder="Apellido"><br>
+  <button class="button-yellow" onclick="clearForm()">Limpiar Formulario</button>
+  <br><br>
 
-    <form class="container" onsubmit="event.preventDefault()">
-      <input class="name" id="name" type="text" placeholder="Nombre"><br>
-      <button class="create" id="newItem">Crear</button><br>
-      <button class="update" id="updateItem">Actualizar</button><br>
-      <button class="deleteItem" id="deleteItem">Eliminar</button><br>
+  <button class="button-blue1" onclick="create()">Crear</button><br>
+  <button class="button-blue2" onclick="update()">Actualizar</button><br>
+  <button class="button-red" onclick="deleteItem()">Eliminar</button>
+  <br /><br />
+  <select id="panel" size="10" onclick="panelClick()"> </select>
+</form>
+</div>
+</header>
 
-    </form>
-  </header>
+<footer>
 
-  <footer>
+<p class="copyright">Creado por ©HMontemayor web design</p>
 
-    <p class="copyright">Creado por ©HMontemayor web design </p>
-  </footer>
+</footer>
   <script src="js/app.js">
   </script>
 
